@@ -1,13 +1,13 @@
 services:
-  todo-frontend:
+  app:
     image: todo-front
     build:
       context: ./todo-frontend # The context will pick this directory as the "build context"
       dockerfile: Dockerfile # This will simply tell which dockerfile to read
     depends_on:
-      - todo-backend
+      - backend
 
-  todo-backend:
+  backend:
     image: todo-backend
     build: 
       context: ./todo-backend
@@ -41,8 +41,8 @@ services:
       - 8080:80
     container_name: reverse-proxy
     depends_on:
-      - todo-frontend # wait for the frontend container to be started
-      - todo-backend
+      - app # wait for the frontend container to be started
+      - backend
 
 volumes:
   mongo_data:
