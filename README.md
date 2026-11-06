@@ -1,2 +1,2 @@
 ## For exercises 22 and 23
-https://github.com/verobv/cicd-phonebook
+https://github.com/verobv/containers-phonebook
